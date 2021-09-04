@@ -1,0 +1,68 @@
+<form action = "/" method = "POST" enctype="multipart/form-data">
+
+  <table style="width: 80%;">
+      {%if (img_name) %}
+      <tr>
+        <td><img src={{img_name[0]}} height="300" width="200"></td>
+        <td><img src={{img_name[1]}} height="300" width="200"></td>
+        <td><img src={{img_name[2]}} height="300" width="200"></td>
+        <td><img src={{img_name[3]}} height="300" width="200"></td>
+      </tr>
+      {% else %}
+      <tr>
+          <td><img id="output" height="300" width="200"></td>
+          <td><img id="output2" height="300" width="200"></td>
+          <td><img id="output3" height="300" width="200"></td>
+          <td><img id="output4" height="300" width="200"></td>
+      </tr>
+      {% endif %}
+      <tr>
+          <td><input type="file" name='img1' onchange="loadFile(event)"></td>
+          <td><input type="file" name='img2' onchange="loadFile2(event)"></td>
+          <td><input type="file" name='img3' onchange="loadFile3(event)"></td>
+          <td><input type="file" name='img4' onchange="loadFile4(event)"></td>
+      </tr>
+
+      <tr>
+          {% if (res)  %}
+          <td>{{res[0]}}</td>
+          <td>{{res[1]}}</td>
+          <td>{{res[2]}}</td>
+          <td>{{res[3]}}</td>
+          {% endif %}
+      </tr>
+  </table>    
+  <script>
+      var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src)
+        }
+      };
+      var loadFile2 = function(event) {
+        var output = document.getElementById('output2');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src)
+        }
+      };        
+      var loadFile3 = function(event) {
+        var output = document.getElementById('output3');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src)
+        }
+      };    
+      var loadFile4 = function(event) {
+        var output = document.getElementById('output4');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src)
+        }
+      };    
+  </script>
+
+  <input type="submit">
+
+</form>

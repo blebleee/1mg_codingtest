@@ -10,6 +10,7 @@ This is my work for MNISTING project. The website look like this
 
 ```bash
 git clone https://github.com/blebleee/1mg_codingtest
+cd 1mg_codingtest
 ```
 
 1. Docker images

@@ -20,7 +20,7 @@ sudo docker build -t mnisting .
 sudo docker run -itd -p 8888:8888 --name mnist mnisting:latest
 ```
 
-1. From source
+2. From source
 
 ```bash
 pip install -r requirments.txt

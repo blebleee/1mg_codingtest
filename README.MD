@@ -1,32 +1,54 @@
-# 1mg markdown
+# 1MG Coding challenge
 
-# 1MG take home coding test
+## Source code
+https://github.com/blebleee/1mg_codingtest
 
-This is my work for MNISTING project. The website look like this
 
-![Screenshot from 2021-09-05 00-32-03.png](1mg%20markdown%20cb6733966140407d8c86b4ab87307735/Screenshot_from_2021-09-05_00-32-03.png)
+## What's inside
+- A website to recognize the handwritten digits uploaded by users
+- Using an opensource tool Tesseract: https://github.com/madmaze/pytesseract
 
-### Installation
+
+## Installation guide
+
+In order to install this product, kindly choose 1 of the following 2 options:
+
+### Option 1: Using Docker
+
+#### Prerequisite: 
+- Docker installed in the local machine
+- git installed in the local machine
+
+#### Steps:
+1. Clone the source code
+- This step will do get the source code from github to your local machine
 
 ```bash
 git clone https://github.com/blebleee/1mg_codingtest
 cd 1mg_codingtest
 ```
-
-1. Docker images
-
+2. Build the docker image
+- This step will do build a dockerfile
+- Remember to enter root password in order to run sudo
+  
 ```bash
 sudo docker build -t mnisting .
+```
+3. Run the server using docker
+```bash
 sudo docker run -itd -p 8888:8888 --name mnist mnisting:latest
 ```
 
-2. From source
-
+### Option 2: Using the source code
 ```bash
-pip install -r requirments.txt
+pip install -r requirements.txt
 python3 main.py
 ```
 
-### Usage
 
-Enter `localhost:8888` in your browser, select the images that you want to predict then press submit button.
+## Usage guide
+- In order to use the product, please
+  - Prepare some handwritten images
+  - Open your web browser
+  - Enter `localhost:8888` 
+  - Upload images with "select" button then predict with "submit" button.
